@@ -1,9 +1,9 @@
 {
-    "name": "PROFESSOR-BOT",
+    "name": "Guardian-BOT",
     "description": "The Telegram Autofilter Bot",
-    "logo": "https://graph.org/file/b7e8484f6395a180b6380.jpg",
-    "keywords": ["Telegram", "auto-filter", "MrMKN"],
-    "repository": "https://github.com/MrMKN/PROFESSOR-BOT",
+    "logo": "https://graph.org/file/808b99244473b4ba80f2e.jpg",
+    "keywords": ["Telegram", "auto-filter", "TechGiron"],
+    "repository": "https://github.com/TechGiron/Guardian-BOT",
     "env": {
         "WEBHOOK": {
             "description": "True/False if your server is web support required? the value is True else False",
@@ -57,7 +57,7 @@
         },
         "CUSTOM_FILE_CAPTION": {
             "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
-            "value": "Hey {mention}👋\n\n{file_name}\n\n🔘 size - {file_size}\n\n╭─── • ❰ @MR_LINK_Z ❱ • ────➤\n┣ ▫️ @MRxSERIES\n┣ ▫️ @MalluMovie_Official\n╰─────── • ◆ • ───────➤",
+            "value": "Hey {mention}👋\n\n{file_name}\n\n🔘 size - {file_size}\n\n╭─── • ❰ @moviesguardianss ❱ • ────➤\n┣ ▫️ @moviesguardianss1\n┣ ▫️ @moviesguardianss2\n╰─────── • ◆ • ───────➤",
             "required": false
         },
         "DATABASE_URL": {
@@ -81,12 +81,12 @@
         },
         "IMDB": {
             "description": "Imdb, the view of information when making True/False",
-            "value": "True",
+            "value": "False",
             "required": false     
         },
         "PM_IMDB": {
             "description": "pm Imdb, the view of information when making True/False",
-            "value": "True",
+            "value": "False",
             "required": false     
         },
         "IMDB_TEMPLATE": {
@@ -121,7 +121,7 @@
         },
         "WELCOM_PIC": {
             "description": "Welcome message pic (telegraph link)",
-            "value": "",
+            "value": "https://graph.org/file/808b99244473b4ba80f2e.jpg",
             "required": false
         },
         "WELCOM_TEXT": {
@@ -146,7 +146,7 @@
         },
         "BUTTON_LOCK": {
             "description": "Button alert set True to on / False to off",
-            "value": "True",
+            "value": "False",
             "required": false
         },
         "RemoveBG_API": {
