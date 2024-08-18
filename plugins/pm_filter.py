@@ -192,11 +192,11 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             await hmm.delete()            
         except Exception as e:
             logger.exception(e)
-            cdp = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+            cdp = await sts.edit_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdp.delete()
     else:
-        abc = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+        abc = await sts.edit_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await abc.delete()        
     if pmspoll:
