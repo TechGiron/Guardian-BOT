@@ -10,6 +10,9 @@ from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results
 from plugins.group_filter import global_filters
+from time import time
+import re
+import time
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -181,6 +184,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         )
     else:
         cap = f"Hᴇʀᴇ Is Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}"
+        cap += f"Search completed in {elapsed_time:.2f} seconds!"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
