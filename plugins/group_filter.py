@@ -284,12 +284,12 @@ async def auto_filter(client, msg, spoll=False):
             await message.delete()
         except Exception as e:
             logger.exception(e)
-            cdb = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            cdb = await sts.edit_text(cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdb.delete()
             await message.delete()
     else:
-        crl = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        crl = await sts.edit_text(cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await crl.delete()   
         await message.delete()
