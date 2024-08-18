@@ -102,8 +102,11 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text): return
         if 2 < len(message.text) < 100:
+            sts = await message.reply('Searching...💥')  # Add this line here
+            start_time = time.time()  # Start measuring elapsed time
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
+            elapsed_time = time.time() - start_time - 2  # Calculate elapsed time
             if not files: return await pm_spoll_choker(msg)              
         else: return 
     else:
