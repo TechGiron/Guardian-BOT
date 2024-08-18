@@ -102,7 +102,6 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text): return
         if 2 < len(message.text) < 100:
-            sts = await message.reply('Searching...💥', quote=True)
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files: return await pm_spoll_choker(msg)              
@@ -192,11 +191,11 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             await hmm.delete()            
         except Exception as e:
             logger.exception(e)
-            cdp = await sts.edit_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+            cdp = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdp.delete()
     else:
-        abc = await sts.edit_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+        abc = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await abc.delete()        
     if pmspoll:
